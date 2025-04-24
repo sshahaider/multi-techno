@@ -37,11 +37,11 @@
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.552 0.016 285.938);
 
-	--rainbow-1: hsl(0 100% 63%);
-	--rainbow-2: hsl(270 100% 63%);
-	--rainbow-3: hsl(210 100% 63%);
-	--rainbow-4: hsl(195 100% 63%);
-	--rainbow-5: hsl(90 100% 63%);
+	--rainbow-1: oklch(0.6287 0.2577 29.2336);
+	--rainbow-2: oklch(0.6293 0.2388 308.3988);
+	--rainbow-3: oklch(0.7473 0.1826 250.6275);
+	--rainbow-4: oklch(0.7861 0.1533 230.4197);
+	--rainbow-5: oklch(0.8668 0.1932 139.7634);
 }
 
 @theme inline {
@@ -84,11 +84,11 @@
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);
 	--radius-xl: calc(var(--radius) + 4px);
-	--color-rainbow-5: var(----rainbow-5);
-	--color-rainbow-4: var(----rainbow-4);
-	--color-rainbow-3: var(----rainbow-3);
-	--color-rainbow-2: var(----rainbow-2);
-	--color-rainbow-1: var(----rainbow-1);
+	--color-rainbow-5: var(--rainbow-5);
+	--color-rainbow-4: var(--rainbow-4);
+	--color-rainbow-3: var(--rainbow-3);
+	--color-rainbow-2: var(--rainbow-2);
+	--color-rainbow-1: var(--rainbow-1);
 
 	--animate-rainbow: rainbow var(--speed, 2s) infinite linear;
 
@@ -150,12 +150,4 @@
 	.container {
 		@apply mx-auto max-w-screen-xl px-4 xl:px-6;
 	}
-}
-
-.dark {
-	--color-1: hsl(0 100% 63%);
-	--color-2: hsl(270 100% 63%);
-	--color-3: hsl(210 100% 63%);
-	--color-4: hsl(195 100% 63%);
-	--color-5: hsl(90 100% 63%);
 }
