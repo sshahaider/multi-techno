@@ -1,15 +1,15 @@
 import HeroSection from '@/components/home/hero';
-import { SectionAnimation } from '@/components/ui/section-animation';
-import { TextHoverEffect } from '@/components/ui/text-hover-effect';
-import { APP_NAME } from '@/lib/constants';
+import OverviewSection from '@/components/home/overview';
+import CallToAction from '@/components/home/call-to-action';
 
 export default function Home() {
 	return (
-		<>
+		<div className="relative">
 			<HeroSection />
-			<SectionAnimation className="container pt-20">
-				<TextHoverEffect text={APP_NAME} />
-			</SectionAnimation>
-		</>
+			<div className="bg-background supports-[backdrop-filter]:bg-background/80 relative z-10 backdrop-blur-2xl">
+				<OverviewSection />
+				<CallToAction />
+			</div>
+		</div>
 	);
 }

@@ -1,8 +1,9 @@
 'use client';
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import { cn } from '@/lib/utils';
 
-export const TextHoverEffect = ({ text, duration }: { text: string; duration?: number; automatic?: boolean }) => {
+export const TextHoverEffect = ({ text, className }: { text: string; className?: string }) => {
 	const svgRef = useRef<SVGSVGElement>(null);
 	const [cursor, setCursor] = useState({ x: 0, y: 0 });
 	const [hovered, setHovered] = useState(false);
@@ -25,12 +26,12 @@ export const TextHoverEffect = ({ text, duration }: { text: string; duration?: n
 			ref={svgRef}
 			width="100%"
 			height="100%"
-			viewBox="0 0 300 100"
+			viewBox="0 0 300 40"
 			xmlns="http://www.w3.org/2000/svg"
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}
 			onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
-			className="select-none"
+			className={cn('select-none', className)}
 		>
 			<defs>
 				<linearGradient id="textGradient" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="25%">
@@ -51,15 +52,11 @@ export const TextHoverEffect = ({ text, duration }: { text: string; duration?: n
 					r="20%"
 					initial={{ cx: '50%', cy: '50%' }}
 					animate={maskPosition}
-					transition={{ duration: duration ?? 0, ease: 'easeOut' }}
-
-					// example for a smoother animation below
-
-					//   transition={{
-					//     type: "spring",
-					//     stiffness: 300,
-					//     damping: 50,
-					//   }}
+					transition={{
+						type: 'spring',
+						stiffness: 300,
+						damping: 50,
+					}}
 				>
 					<stop offset="0%" stopColor="white" />
 					<stop offset="100%" stopColor="black" />
@@ -70,7 +67,7 @@ export const TextHoverEffect = ({ text, duration }: { text: string; duration?: n
 			</defs>
 			<text
 				x="50%"
-				y="50%"
+				y="70%"
 				textAnchor="middle"
 				dominantBaseline="middle"
 				strokeWidth="0.3"
@@ -81,7 +78,7 @@ export const TextHoverEffect = ({ text, duration }: { text: string; duration?: n
 			</text>
 			<motion.text
 				x="50%"
-				y="50%"
+				y="70%"
 				textAnchor="middle"
 				dominantBaseline="middle"
 				strokeWidth="0.3"
@@ -100,7 +97,7 @@ export const TextHoverEffect = ({ text, duration }: { text: string; duration?: n
 			</motion.text>
 			<text
 				x="50%"
-				y="50%"
+				y="70%"
 				textAnchor="middle"
 				dominantBaseline="middle"
 				stroke="url(#textGradient)"

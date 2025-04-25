@@ -1,5 +1,6 @@
 import React from 'react';
 import { cva } from 'class-variance-authority';
+import { APP_NAME } from '@/lib/constants';
 
 interface Props {
 	size?: 'sm' | 'md' | 'lg';
@@ -19,5 +20,6 @@ const logoVariants = cva('w-max invert', {
 });
 
 export function Logo({ size }: Props) {
-	return <img alt="Logo" className={logoVariants({ size })} src="/logo.png" />;
+	//  eslint-disable-next-line @next/next/no-img-element
+	return <img alt={`${APP_NAME} Logo`} className={logoVariants({ size })} src="/logo.png" />;
 }

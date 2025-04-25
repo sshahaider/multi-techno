@@ -15,12 +15,12 @@ export function Header() {
 						<Logo />
 					</Link>
 				</div>
-				<div className="hidden w-full md:flex md:justify-center">
+				<div className="hidden w-full lg:flex lg:justify-center">
 					<Navigation />
 				</div>
-				<div className="hidden w-full md:flex md:items-center md:justify-end md:gap-2">
-					<BookADemoButton className="rounded-full" />
+				<div className="hidden w-full lg:flex lg:items-center lg:justify-end lg:gap-2">
 					<BecomeAPartnerButton className="rounded-full" />
+					<BookADemoButton className="rounded-full" />
 				</div>
 				<MoileNav />
 			</nav>

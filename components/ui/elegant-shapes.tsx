@@ -69,9 +69,8 @@ function ElegantShape({
 	);
 }
 
-function HeroGeometric({ children }: { children: React.ReactNode }) {
+export function ElegantShapes() {
 	return (
-		<div className="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden">
 			<div className="absolute inset-0 overflow-hidden">
 				<ElegantShape
 					delay={0.3}
@@ -118,11 +117,5 @@ function HeroGeometric({ children }: { children: React.ReactNode }) {
 					className="top-[5%] left-[20%] md:top-[10%] md:left-[25%]"
 				/>
 			</div>
-
-			<div className="relative z-10 container">{children}</div>
-			<div className="from-background pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-[#030303]/80" />
-		</div>
 	);
 }
-
-export { HeroGeometric };
