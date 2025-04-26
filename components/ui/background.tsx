@@ -5,7 +5,8 @@ import { cva, VariantProps } from 'class-variance-authority';
 const backGroundVariants = cva('z--10 absolute inset-0 h-full w-full', {
 	variants: {
 		variant: {
-			grid: 'bg-[linear-gradient(to_right,color-mix(in_oklab,var(--primary)10%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,var(--primary)10%,transparent)_1px,transparent_1px)]',
+			grid: 'bg-[linear-gradient(to_right,color-mix(in_oklab,var(--foreground)10%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,var(--foreground)10%,transparent)_1px,transparent_1px)]',
+			dot: 'bg-[radial-gradient(color-mix(in_oklab,var(--foreground)30%,transparent)_1px,transparent_1px)]',
 		},
 		mask: {
 			rounded: '[mask-image:radial-gradient(ellipse_at_center,var(--background)_30%,transparent)]',
@@ -28,8 +29,8 @@ const backGroundVariants = cva('z--10 absolute inset-0 h-full w-full', {
 
 type BackGroundProps = React.ComponentProps<'div'> & VariantProps<typeof backGroundVariants>;
 
-const BackGround = ({ className, mask, size, ...props }: BackGroundProps) => {
-	return <div className={cn(backGroundVariants({ mask, size, className }))} {...props} />;
+const BackGround = ({ variant, mask, size, className, ...props }: BackGroundProps) => {
+	return <div className={cn(backGroundVariants({ variant, mask, size, className }))} {...props} />;
 };
 BackGround.displayName = 'BackGround';
 

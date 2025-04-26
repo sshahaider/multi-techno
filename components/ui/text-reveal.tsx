@@ -1,14 +1,14 @@
 'use client';
 
 import { motion, MotionValue, useScroll, useTransform } from 'motion/react';
-import { ComponentPropsWithoutRef, FC, ReactNode, useRef } from 'react';
+import { ComponentProps, ComponentPropsWithoutRef, FC, ReactNode, useRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
 export interface TextRevealProps extends ComponentPropsWithoutRef<'div'> {
 	texts: string[];
-	containerClassName?: string;
-	textClassName?: string;
+	containerClassName?: ComponentProps<'div'>['className'];
+	textClassName?: ComponentProps<'div'>['className'];
 }
 
 export const TextReveal = ({ children, texts, className, containerClassName, textClassName }: TextRevealProps) => {

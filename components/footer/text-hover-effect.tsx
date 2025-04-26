@@ -1,10 +1,18 @@
 'use client';
-import React, { useRef, useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import React, { useRef, useEffect, useState, ComponentProps } from 'react';
+import { motion, useInView } from 'motion/react';
 import { cn } from '@/lib/utils';
 
-export const TextHoverEffect = ({ text, className }: { text: string; className?: string }) => {
-	const svgRef = useRef<SVGSVGElement>(null);
+export const TextHoverEffect = ({
+	text,
+	className,
+}: {
+	text: string;
+	className?: ComponentProps<'div'>['className'];
+}) => {
+	const svgRef = useRef<SVGSVGElement | null>(null);
+	const isInView = useInView(svgRef, { once: true });
+
 	const [cursor, setCursor] = useState({ x: 0, y: 0 });
 	const [hovered, setHovered] = useState(false);
 	const [maskPosition, setMaskPosition] = useState({ cx: '50%', cy: '50%' });
@@ -20,6 +28,16 @@ export const TextHoverEffect = ({ text, className }: { text: string; className?:
 			});
 		}
 	}, [cursor]);
+
+	useEffect(() => {
+		if (isInView && svgRef.current) {
+			const svgRect = svgRef.current.getBoundingClientRect();
+			setCursor({
+				x: svgRect.left + svgRect.width / 2,
+				y: svgRect.top + svgRect.height / 2,
+			});
+		}
+	}, [isInView]);
 
 	return (
 		<svg
@@ -54,7 +72,7 @@ export const TextHoverEffect = ({ text, className }: { text: string; className?:
 					animate={maskPosition}
 					transition={{
 						type: 'spring',
-						stiffness: 300,
+						stiffness: 500,
 						damping: 50,
 					}}
 				>
@@ -71,8 +89,7 @@ export const TextHoverEffect = ({ text, className }: { text: string; className?:
 				textAnchor="middle"
 				dominantBaseline="middle"
 				strokeWidth="0.3"
-				className="font-heading fill-transparent stroke-neutral-200 text-[52px] font-bold tracking-tight dark:stroke-neutral-800"
-				style={{ opacity: hovered ? 0.7 : 0 }}
+				className="font-heading stroke-border fill-transparent text-[52px] font-bold tracking-tight"
 			>
 				{text}
 			</text>
@@ -82,7 +99,7 @@ export const TextHoverEffect = ({ text, className }: { text: string; className?:
 				textAnchor="middle"
 				dominantBaseline="middle"
 				strokeWidth="0.3"
-				className="font-heading fill-transparent stroke-neutral-200 text-[52px] font-bold tracking-tight dark:stroke-neutral-800"
+				className="font-heading stroke-border fill-transparent text-[52px] font-bold tracking-tight"
 				initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
 				animate={{
 					strokeDashoffset: 0,

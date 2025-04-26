@@ -142,7 +142,6 @@ export function Footer() {
 					</p>
 				</SectionAnimation>
 			</div>
-
 			<TextHoverEffect className="z-10 pt-20" text={APP_NAME} />
 		</footer>
 	);

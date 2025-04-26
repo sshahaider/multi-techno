@@ -1,6 +1,7 @@
 import HeroSection from '@/components/home/hero';
 import OverviewSection from '@/components/home/overview';
 import CallToAction from '@/components/home/call-to-action';
+import IntegrationsSection from '@/components/home/integrations';
 
 export default function Home() {
 	return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<HeroSection />
 			<div className="bg-background supports-[backdrop-filter]:bg-background/80 relative z-10 backdrop-blur-2xl">
 				<OverviewSection />
+				<IntegrationsSection />
 				<CallToAction />
 			</div>
 		</div>

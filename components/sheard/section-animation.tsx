@@ -1,6 +1,5 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import { motion, useReducedMotion } from 'motion/react';
 import type { ComponentProps, ReactNode } from 'react';
 
@@ -10,7 +9,7 @@ type ViewAnimationProps = {
 	children: ReactNode;
 };
 
-export const SectionAnimation = ({ className, delay, children }: ViewAnimationProps) => {
+export const SectionAnimation = ({ className, delay = 0.2, children }: ViewAnimationProps) => {
 	const shouldReduceMotion = useReducedMotion();
 
 	if (shouldReduceMotion) {
@@ -20,10 +19,10 @@ export const SectionAnimation = ({ className, delay, children }: ViewAnimationPr
 	return (
 		<motion.div
 			initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
-			animate={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
-			className={cn('grid gap-4', className)}
-			viewport={{ once: true, amount: 0.3 }}
+			whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
+			viewport={{ once: true }}
 			transition={{ delay, duration: 0.8 }}
+			className={className}
 		>
 			{children}
 		</motion.div>
