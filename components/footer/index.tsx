@@ -18,12 +18,6 @@ interface FooterSection {
 	links: FooterLink[];
 }
 
-interface FooterImage {
-	src: string;
-	alt: string;
-	className: string;
-}
-
 export function Footer() {
 	const footerLinks: FooterSection[] = [
 		{
@@ -66,49 +60,13 @@ export function Footer() {
 		},
 	];
 
-	const footerImages: FooterImage[] = [
-		{
-			src: '/fbr.png',
-			alt: 'Federal Board of Revenue Pakistan logo',
-			className: 'h-7 dark:invert',
-		},
-		{
-			src: '/pseb.png',
-			alt: 'Pakistan Software Export Board logo',
-			className: 'h-7 dark:invert',
-		},
-		{
-			src: '/pasha.png',
-			alt: 'Pakistan Software Houses Association logo',
-			className: 'h-4 dark:invert',
-		},
-		{
-			src: '/mit.png',
-			alt: 'Ministry of Information Technology logo',
-			className: 'h-9 dark:invert',
-		},
-		{
-			src: '/secp.png',
-			alt: 'Securities and Exchange Commission of Pakistan logo',
-			className: 'h-9 dark:invert',
-		},
-	];
-
 	return (
 		<footer className="md:rounded-t-6xl relative container flex flex-col items-center justify-center rounded-t-4xl border-t bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)] px-6 pt-16 lg:px-8 lg:pt-24">
 			<div className="bg-foreground/20 absolute top-0 right-1/2 left-1/2 h-px w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur"></div>
 
 			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
 				<SectionAnimation delay={0.1}>
-					<div className="flex flex-col items-start justify-start md:max-w-max">
-						<p className="text-muted-foreground mb-4 text-sm">Proudly Registered With</p>
-						<div className="flex flex-wrap items-center justify-start gap-2">
-							{footerImages.map((image) => (
-								//  eslint-disable-next-line @next/next/no-img-element
-								<img key={image.src} loading="lazy" src={image.src} alt={image.alt} className={image.className} />
-							))}
-						</div>
-					</div>
+					<div className="flex flex-col items-start justify-start md:max-w-max"></div>
 				</SectionAnimation>
 
 				<div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
