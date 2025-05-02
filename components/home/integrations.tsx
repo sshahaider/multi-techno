@@ -1,13 +1,14 @@
 import { cn } from '@/lib/utils';
-import { SectionAnimation } from '../sheard/section-animation';
+import { AnimatedContainer } from '../sheard/animated-container';
 import { BackGround } from '../ui/background';
 import { ShopifyIcon, DropboxIcon, GoogleIcon, PayPalIcon, SlackIcon, StripeIcon } from '../icons';
+import { LogoIcon } from '../logo';
 
 export default function IntegrationsSection() {
 	return (
 		<section className="bg-muted/20 relative py-24 backdrop-blur-2xl md:py-32">
 			<BackGround variant="dot" mask="toBottom" className="opacity-80" />
-			<SectionAnimation className="mx-auto px-6">
+			<AnimatedContainer className="mx-auto px-6">
 				<div className="relative mx-auto flex max-w-sm items-center justify-between">
 					<div className="space-y-6">
 						<IntegrationCard position="left-top">
@@ -26,7 +27,7 @@ export default function IntegrationsSection() {
 								className="bg-background size-16 border-white/25 shadow-xl shadow-white/10"
 								isCenter={true}
 							>
-								--logo
+								<LogoIcon className="size-full" />
 							</IntegrationCard>
 						</div>
 					</div>
@@ -55,7 +56,7 @@ export default function IntegrationsSection() {
 						Connect seamlessly with popular platforms and services to enhance your workflow.
 					</p>
 				</div>
-			</SectionAnimation>
+			</AnimatedContainer>
 		</section>
 	);
 }

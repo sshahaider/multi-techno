@@ -9,7 +9,7 @@ type ViewAnimationProps = {
 	children: ReactNode;
 };
 
-export const SectionAnimation = ({ className, delay = 0.2, children }: ViewAnimationProps) => {
+export const AnimatedContainer = ({ className, delay = 0.2, children }: ViewAnimationProps) => {
 	const shouldReduceMotion = useReducedMotion();
 
 	if (shouldReduceMotion) {

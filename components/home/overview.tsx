@@ -1,11 +1,11 @@
 'use client';
 import { TextReveal } from '@/components/ui/text-reveal';
-import { SectionAnimation } from '../sheard/section-animation';
+import { AnimatedContainer } from '../sheard/animated-container';
 
 export default function OverviewSection() {
 	return (
 		<section>
-			<SectionAnimation>
+			<AnimatedContainer>
 				<TextReveal
 					textClassName="tracking-wide gap-y-12 py-10 md:py-20 text-start font-normal text-lg md:text-2xl lg:text-4xl justify-start items-start max-w-5xl"
 					texts={[
@@ -15,7 +15,7 @@ export default function OverviewSection() {
 						"Let's get started!",
 					]}
 				/>
-			</SectionAnimation>
+			</AnimatedContainer>
 		</section>
 	);
 }

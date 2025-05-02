@@ -13,6 +13,7 @@ const backGroundVariants = cva('z--10 absolute inset-0 h-full w-full', {
 			toTop: '[mask-image:linear-gradient(to_bottom,var(--background),transparent)]',
 			toBottom: '[mask-image:linear-gradient(to_bottom,transparent,var(--background))]',
 			topBottom: '[mask-image:linear-gradient(to_bottom,transparent,var(--background),transparent)]',
+			none: '',
 		},
 		size: {
 			sm: 'bg-[size:24px_24px]',
@@ -22,7 +23,7 @@ const backGroundVariants = cva('z--10 absolute inset-0 h-full w-full', {
 	},
 	defaultVariants: {
 		variant: 'grid',
-		mask: 'topBottom',
+		mask: 'none',
 		size: 'sm',
 	},
 });

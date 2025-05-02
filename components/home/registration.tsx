@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { SectionAnimation } from '../sheard/section-animation';
+import { AnimatedContainer } from '../sheard/animated-container';
 
 interface Registrar {
 	image: {
@@ -40,7 +40,7 @@ export default function RegistrationSection() {
 		<section className="border-y py-24 md:py-32">
 			<div className="mx-auto flex flex-col px-6 md:grid md:max-w-4xl md:grid-cols-2 md:gap-12">
 				<div className="order-last mt-6 flex flex-col gap-12 md:order-first">
-					<SectionAnimation className="space-y-6">
+					<AnimatedContainer className="space-y-6">
 						<h2 className="font-heading text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
 							Proudly Registered With
 						</h2>
@@ -48,17 +48,20 @@ export default function RegistrationSection() {
 							We are officially registered with leading government authorities, ensuring full compliance, transparency,
 							and credibility in everything we do.
 						</p>
-					</SectionAnimation>
+					</AnimatedContainer>
 				</div>
 
 				<div className="-mx-6 [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_70%,transparent_100%)] px-6 sm:mx-auto sm:max-w-md md:-mx-6 md:mr-0 md:ml-auto">
-					<SectionAnimation delay={0.5} className="bg-muted/30 rounded-2xl border border-dashed p-3 shadow-lg md:pb-12">
+					<AnimatedContainer
+						delay={0.5}
+						className="bg-muted/30 rounded-2xl border border-dashed p-3 shadow-lg md:pb-12"
+					>
 						<div className="grid grid-cols-2 gap-2">
 							{registrars.map((reg, index) => (
 								<RegistrationBox key={index} {...reg} />
 							))}
 						</div>
-					</SectionAnimation>
+					</AnimatedContainer>
 				</div>
 			</div>
 		</section>
