@@ -10,13 +10,19 @@ import {
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { companyPages, erpServices, industries, services, techs } from './navigation-menu-links';
 import { NavGridCard, NavItem, NavLargeItem, NavSmallItem } from './sheard';
+import { useIsOpen } from '@/hooks/use-is-open';
 
 export function Navigation() {
+	const { setOpen } = useIsOpen('nav');
+
 	return (
 		<NavigationMenuPrimitive.Root
 			delayDuration={0}
 			data-slot="navigation-menu"
-			className="group/navigation-menu relative flex max-w-max flex-1 items-center justify-center"
+			className="group/navigation-menu flex max-w-max flex-1 items-center justify-center"
+			onValueChange={(value) => {
+				setOpen(Boolean(value));
+			}}
 		>
 			<NavigationMenuList>
 				<NavigationMenuItem>
@@ -97,10 +103,10 @@ export function Navigation() {
 					</NavigationMenuContent>
 				</NavigationMenuItem>
 			</NavigationMenuList>
-			<div className="absolute top-full left-1/2 mt-2 -translate-x-1/2">
+			<div className="absolute top-full left-1/2 z-50 mt-2 -translate-x-1/2">
 				<NavigationMenuPrimitive.Viewport
 					data-slot="navigation-menu-viewport"
-					className="origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-xl border border-dashed shadow transition-[width,height] md:w-[var(--radix-navigation-menu-viewport-width)]"
+					className="origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 shadow-background relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-xl border border-dashed shadow-lg transition-[width,height] md:w-[var(--radix-navigation-menu-viewport-width)]"
 				/>
 			</div>
 		</NavigationMenuPrimitive.Root>

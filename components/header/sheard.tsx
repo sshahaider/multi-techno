@@ -17,7 +17,7 @@ export function NavItem({
 	return (
 		<NavigationMenuLink asChild>
 			<Link className={cn('group relative flex-row gap-x-2', className)} {...props}>
-				<div className={cn('bg-muted/20 flex size-10 items-center justify-center rounded-lg border border-dashed')}>
+				<div className={cn('bg-background flex size-10 items-center justify-center rounded-lg border border-dashed')}>
 					{item.icon && <item.icon />}
 				</div>
 				<div className={cn('flex h-10 flex-col justify-center')}>
@@ -64,8 +64,8 @@ export function NavSmallItem({
 }) {
 	return (
 		<NavigationMenuLink asChild>
-			<Link className={cn('group relative flex-row gap-x-2', className)} {...props}>
-				<div className={cn('flex size-5 items-center justify-center rounded-lg')}>{item.icon && <item.icon />}</div>
+			<Link className={cn('group relative flex-row gap-x-2 rounded-xl', className)} {...props}>
+				<div className={cn('flex size-5 items-center justify-center')}>{item.icon && <item.icon />}</div>
 				<div className={cn('flex h-5 flex-col justify-center')}>
 					<p className="text-sm">{item.title}</p>
 					<span className="text-muted-foreground line-clamp-1 text-xs leading-snug">{item.description}</span>
@@ -88,7 +88,10 @@ export function NavLargeItem({
 	return (
 		<NavigationMenuLink className="p-0" asChild>
 			<Link
-				className={cn('group relative flex flex-col justify-center rounded-xl border border-dashed', className)}
+				className={cn(
+					'bg-background group relative flex flex-col justify-center rounded-xl border border-dashed',
+					className,
+				)}
 				{...props}
 			>
 				<div className="flex items-center justify-between px-5 py-4">
@@ -114,13 +117,13 @@ export function NavGridCard({
 		<NavigationMenuPrimitive.Link asChild>
 			<Link
 				className={cn(
-					'group relative isolate z-0 flex h-full flex-col justify-between overflow-hidden rounded-xl border border-dashed px-5 py-4 transition-colors duration-75',
+					'group bg-background relative isolate z-0 flex h-full flex-col justify-between overflow-hidden rounded-xl border border-dashed px-5 py-4 transition-colors duration-75',
 					className,
 				)}
 				{...props}
 			>
 				<div className="absolute inset-0">
-					<div className="absolute -inset-[25%] -skew-y-12 [mask-image:linear-gradient(225deg,black,transparent_50%)]">
+					<div className="absolute -inset-[25%] -skew-y-12 [mask-image:linear-gradient(225deg,black,transparent)]">
 						<BackGround className="translate-y-2 transition-transform duration-150 ease-out group-hover:translate-y-0" />
 					</div>
 					<div
