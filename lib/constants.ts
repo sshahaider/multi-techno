@@ -12,3 +12,18 @@ export const APP_STORAGE_URL = `https://${APP_STORAGE_DOMAIN}`;
 
 export const APP_LOGO = `${APP_STORAGE_URL}/logo.png`;
 export const APP_WORDMARK = `${APP_STORAGE_URL}/wordmark.png`;
+
+export const clients = [
+	{
+		logo: '/client/gala.png',
+	},
+	{
+		logo: '/client/meta.png',
+	},
+	{
+		logo: '/client/mf.png',
+	},
+	{
+		logo: '/client/eventcon.png',
+	},
+];

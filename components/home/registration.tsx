@@ -1,6 +1,9 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { AnimatedContainer } from '../sheard/animated-container';
+import { BackGround } from '../ui/background';
+import BookADemoButton from '../sheard/book-a-demo-button';
+import { SectionHeading } from '../sheard';
 
 interface Registrar {
 	image: {
@@ -37,26 +40,28 @@ const registrars: Registrar[] = [
 
 export default function RegistrationSection() {
 	return (
-		<section className="border-t py-24 md:py-32">
-			<div className="mx-auto flex flex-col px-6 md:grid md:max-w-4xl md:grid-cols-2 md:gap-12">
+		<section className="relative border-t py-24 md:py-32">
+			<BackGround mask="toTop" variant="dot" />
+			<div className="container-sm flex flex-col px-6 md:grid md:grid-cols-2 md:gap-12">
 				<div className="order-last mt-6 flex flex-col justify-center gap-12 md:order-first">
 					<AnimatedContainer className="space-y-6">
-						<h2 className="font-heading text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
+						<SectionHeading>
 							Proudly Registered With
-						</h2>
-						<p className="text-muted-foreground">
+						</SectionHeading>
+						<p className="text-muted-foreground md:text-lg">
 							We are officially registered with leading government authorities, ensuring full compliance, transparency,
 							and credibility in everything we do.
 						</p>
+						<BookADemoButton size="lg" showIcon />
 					</AnimatedContainer>
 				</div>
 
 				<div
-					className="	[mask-image:linear-gradient(to_bottom,var(--background)_70%,transparent)] sm:mx-auto sm:max-w-md md:-mx-6 md:mr-0 md:ml-auto"
+					className="[mask-image:linear-gradient(to_bottom,var(--background)_70%,transparent)] md:-mx-6 md:mr-0 md:ml-auto"
 				>
 					<AnimatedContainer
 						delay={0.5}
-						className="bg-input/30 rounded-2xl border border-dashed p-3 shadow-lg md:pb-12"
+						className="bg-popover rounded-2xl border border-dashed p-3 shadow-lg md:pb-12"
 					>
 						<div className="grid grid-cols-2 gap-2">
 							{registrars.map((reg, index) => (

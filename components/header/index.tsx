@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Headerwraper } from './wraper';
 import { Navigation } from './nav';
 import MoileNav from './moile-nav';
-import BookADemoButton from './book-a-demo-button';
+import BookADemoButton from '../sheard/book-a-demo-button';
 import { LogoWithText } from '../logo';
 import BackgroundOverlay from './background-overlay';
 

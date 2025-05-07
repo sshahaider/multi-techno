@@ -2,7 +2,7 @@ import React from 'react';
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { MenuIcon, XIcon } from 'lucide-react';
 import { Button } from '../ui/button';
-import BookADemoButton from './book-a-demo-button';
+import BookADemoButton from '../sheard/book-a-demo-button';
 import { LogoWithText } from '../logo';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { companyPages, erpServices, industries, services, techs } from './navigation-menu-links';

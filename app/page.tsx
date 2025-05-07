@@ -5,11 +5,13 @@ import IntegrationsSection from '@/components/home/integrations';
 import RegistrationSection from '@/components/home/registration';
 import DashboardSection from '@/components/home/dashboard';
 import ScroolTextSection from '@/components/home/scrool-text';
+import ClientsLogos from '@/components/home/clients-logos';
 
 export default function Home() {
 	return (
 		<div className="relative">
 			<HeroSection />
+			<ClientsLogos />
 			<OverviewSection />
 			<DashboardSection />
 			<IntegrationsSection />

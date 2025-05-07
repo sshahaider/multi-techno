@@ -2,6 +2,7 @@ import { APP_NAME } from '@/lib/constants';
 import { Cloud, Cpu, Lock, Zap } from 'lucide-react'; // Add the missing Cloud icon
 import Image from 'next/image';
 import { AnimatedContainer } from '../sheard/animated-container';
+import { SectionHeading } from '../sheard';
 
 const features = [
 	{
@@ -32,9 +33,9 @@ export default function DashboardSection() {
 			<div className="container-sm space-y-8">
 				{/* Heading */}
 				<div className="relative z-10 max-w-xl">
-					<h2 className="font-heading text-5xl font-bold md:text-5xl lg:text-6xl lg:font-extrabold xl:text-7xl">
+					<SectionHeading>
 						Built for Scaling Businesses
-					</h2>
+					</SectionHeading>
 					<p className="text-foreground/80 mt-6 text-lg">
 						Empower your business with the tools and speed you need to grow.
 					</p>
