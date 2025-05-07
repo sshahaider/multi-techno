@@ -6,8 +6,8 @@ import { LogoIcon } from '../logo';
 
 export default function IntegrationsSection() {
 	return (
-		<section className="bg-muted/20 relative py-24 backdrop-blur-2xl md:py-32">
-			<BackGround variant="dot" mask="toBottom" className="opacity-80" />
+		<section className="bg-muted/10 relative py-32 md:py-48">
+			<BackGround variant="dot" mask="toBottom" className="opacity-60" />
 			<AnimatedContainer className="mx-auto px-6">
 				<div className="relative mx-auto flex max-w-sm items-center justify-between">
 					<div className="space-y-6">

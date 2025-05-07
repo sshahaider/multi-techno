@@ -5,7 +5,7 @@ import { AnimatedContainer } from '../sheard/animated-container';
 export default function OverviewSection() {
 	return (
 		<section>
-			<AnimatedContainer>
+			<AnimatedContainer className='py-24'>
 				<TextReveal
 					textClassName="tracking-wide gap-y-12 py-10 md:py-20 text-start font-normal text-lg md:text-2xl lg:text-4xl justify-start items-start max-w-5xl"
 					texts={[

@@ -66,7 +66,9 @@ export default function MoileNav() {
 					</SheetClose>
 				</div>
 				<div className="container grid gap-y-2 overflow-y-auto pt-5 pb-12">
-					<BookADemoButton />
+					<SheetClose asChild>
+						<BookADemoButton />
+					</SheetClose>
 					<Accordion type="single" defaultValue="" collapsible>
 						{sections.map((section) => (
 							<AccordionItem key={section.id} value={section.id}>

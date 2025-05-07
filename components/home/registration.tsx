@@ -37,9 +37,9 @@ const registrars: Registrar[] = [
 
 export default function RegistrationSection() {
 	return (
-		<section className="border-y py-24 md:py-32">
+		<section className="border-t py-24 md:py-32">
 			<div className="mx-auto flex flex-col px-6 md:grid md:max-w-4xl md:grid-cols-2 md:gap-12">
-				<div className="order-last mt-6 flex flex-col gap-12 md:order-first">
+				<div className="order-last mt-6 flex flex-col justify-center gap-12 md:order-first">
 					<AnimatedContainer className="space-y-6">
 						<h2 className="font-heading text-3xl font-semibold text-balance md:text-4xl lg:text-5xl">
 							Proudly Registered With
@@ -51,10 +51,12 @@ export default function RegistrationSection() {
 					</AnimatedContainer>
 				</div>
 
-				<div className="-mx-6 [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_70%,transparent_100%)] px-6 sm:mx-auto sm:max-w-md md:-mx-6 md:mr-0 md:ml-auto">
+				<div
+					className="	[mask-image:linear-gradient(to_bottom,var(--background)_70%,transparent)] sm:mx-auto sm:max-w-md md:-mx-6 md:mr-0 md:ml-auto"
+				>
 					<AnimatedContainer
 						delay={0.5}
-						className="bg-muted/30 rounded-2xl border border-dashed p-3 shadow-lg md:pb-12"
+						className="bg-input/30 rounded-2xl border border-dashed p-3 shadow-lg md:pb-12"
 					>
 						<div className="grid grid-cols-2 gap-2">
 							{registrars.map((reg, index) => (
@@ -72,7 +74,7 @@ const RegistrationBox = ({ image, description, className }: React.ComponentProps
 	return (
 		<div
 			title={description}
-			className={cn('bg-popover hover:bg-muted/20 space-y-4 rounded-lg border p-3 transition-colors md:p-4', className)}
+			className={cn('bg-background hover:bg-input/20 space-y-4 rounded-lg border p-3 transition-colors md:p-4', className)}
 		>
 			<div className="flex size-fit items-center justify-center">
 				{/* eslint-disable-next-line @next/next/no-img-element */}
