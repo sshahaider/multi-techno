@@ -1,3 +1,4 @@
+import { APP_NAME, APP_TAGLINE } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 export const LogoIcon = ({ isInverted, ...props }: React.ComponentProps<'svg'> & { isInverted?: boolean }) => (
@@ -24,8 +25,10 @@ export function LogoWithText({
 		<div className={cn('flex items-center justify-center gap-x-0.5', className)}>
 			<LogoIcon className="size-10 shrink-0" isInverted={isInverted} />
 			<div className="font-heading pb-0.px grid w-full">
-				<p className="text-[13px] leading-none font-semibold tracking-tight text-nowrap">MULTI-TECHNO</p>
-				<span className="text-[8px] leading-none font-thin tracking-[-0.018em] text-nowrap">INTEGRATED SOLUTIONS</span>
+				<p className="text-[13px] leading-none font-semibold tracking-tight text-nowrap uppercase">{APP_NAME}</p>
+				<span className="text-[8px] leading-none font-thin tracking-[-0.018em] text-nowrap uppercase">
+					{APP_TAGLINE}
+				</span>
 			</div>
 		</div>
 	);

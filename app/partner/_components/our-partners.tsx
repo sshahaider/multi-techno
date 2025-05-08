@@ -10,7 +10,7 @@ export default function OurPartners() {
 			country: 'UAE',
 			phone: '+971 50 844 0948',
 			email: 'admin@linkszenit.com',
-			logo: '/client/linkszen-logo.webp',
+			logo: '/partners/linkszen.png',
 			link: 'https://linkszenit.com/',
 		},
 		{
@@ -18,7 +18,7 @@ export default function OurPartners() {
 			country: 'Saudi Arabia',
 			phone: '+966 1 14565235',
 			email: 'info@multi-techno.com',
-			logo: '/client/4ds-logo.png',
+			logo: '/partners/4ds.png',
 			link: 'https://www.fdsme.com/',
 		},
 		{
@@ -26,7 +26,7 @@ export default function OurPartners() {
 			country: 'Oman',
 			phone: '+968 95371076',
 			email: 'info@binshub.com',
-			logo: '/client/bins-logo.png',
+			logo: '/partners/bins.png',
 			link: 'https://binshub.com/',
 		},
 	];

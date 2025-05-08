@@ -6,7 +6,9 @@ import { cn } from '@/lib/utils';
 import { fontHeading, fontMono, fontSans } from '@/lib/fonts';
 import { Footer } from '@/components/footer';
 
-export const metadata: Metadata = constructMetadata({});
+export const metadata: Metadata = constructMetadata({
+	url: '/',
+});
 
 export default function RootLayout({
 	children,
