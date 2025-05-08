@@ -6,6 +6,7 @@ import RegistrationSection from '@/components/home/registration';
 import DashboardSection from '@/components/home/dashboard';
 import ScroolTextSection from '@/components/home/scrool-text';
 import ClientsLogos from '@/components/home/clients-logos';
+import ModulesSection from '@/components/home/modules';
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<ClientsLogos />
 			<OverviewSection />
 			<DashboardSection />
+			<ModulesSection />
 			<IntegrationsSection />
 			<RegistrationSection />
 			<ScroolTextSection />
