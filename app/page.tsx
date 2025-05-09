@@ -7,6 +7,7 @@ import DashboardSection from '@/components/home/dashboard';
 import ScroolTextSection from '@/components/home/scrool-text';
 import ClientsLogos from '@/components/home/clients-logos';
 import ModulesSection from '@/components/home/modules';
+import TestimonialsSection from '@/components/home/testimonials';
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 			<ModulesSection />
 			<IntegrationsSection />
 			<RegistrationSection />
+			<TestimonialsSection />
 			<ScroolTextSection />
 			<CallToAction />
 		</div>

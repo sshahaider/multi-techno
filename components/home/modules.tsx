@@ -87,16 +87,16 @@ export default function ModulesSection() {
 			<div className="container space-y-8">
 				<AnimatedContainer delay={0.1} className="text-center max-w-2xl mx-auto">
 					<SectionHeading>Modules for Growth</SectionHeading>
-					<p className="text-foreground/80 mt-6 text-lg">
+					<p className="text-foreground/80 mt-6 text-sm md:text-lg text-balance">
 						All essential modules you need to grow, manage, and streamline operations.
 Designed to boost efficiency, control, and business scalability.
 					</p>
 				</AnimatedContainer>
 				<AnimatedContainer className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{modules.map((module) => (
-						<div key={module.title} className="from-input/30 to-input/10 relative overflow-hidden p-6">
+						<div key={module.title} className="relative overflow-hidden p-6">
 							<Grid size={20} />
-							<module.icon className="size-6" aria-hidden />
+							<module.icon className="size-6 text-foreground/75" strokeWidth={1} aria-hidden />
 							<h3 className="font-heading mt-10 text-sm xl:text-base">{module.title}</h3>
 							<p className="text-muted-foreground relative z-20 mt-2 text-xs font-light">
 								{module.description.join(', ')}

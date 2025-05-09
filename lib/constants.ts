@@ -7,7 +7,6 @@ export const APP_HOME_URL = `https://${APP_DOMAIN}`;
 export const APP_EMAIL = `mail@${APP_DOMAIN}`;
 export const APP_EMAIL_FROM = `${APP_NAME} <${APP_EMAIL}>`;
 
-
 export const clients = [
 	{
 		logo: '/clients/gala.png',
