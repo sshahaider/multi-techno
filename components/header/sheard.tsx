@@ -17,7 +17,7 @@ export function NavItem({
 	return (
 		<NavigationMenuLink asChild>
 			<Link className={cn('group relative flex-row gap-x-2', className)} {...props}>
-				<div className={cn('bg-background flex size-10 items-center justify-center rounded-lg border border-dashed')}>
+				<div className={cn('bg-background flex size-10 items-center justify-center rounded-sm border border-dashed')}>
 					{item.icon && <item.icon />}
 				</div>
 				<div className={cn('flex h-10 flex-col justify-center')}>
@@ -44,7 +44,7 @@ export function NavItemMobile({
 			)}
 			{...props}
 		>
-			<div className={cn('bg-muted/20 flex size-10 items-center justify-center rounded-lg border border-dashed')}>
+			<div className={cn('bg-muted/20 flex size-10 items-center justify-center  border border-dashed')}>
 				{item.icon && <item.icon />}
 			</div>
 			<div className={cn('flex h-10 flex-col justify-center')}>
@@ -64,7 +64,7 @@ export function NavSmallItem({
 }) {
 	return (
 		<NavigationMenuLink asChild>
-			<Link className={cn('group relative flex-row gap-x-2 rounded-xl', className)} {...props}>
+			<Link className={cn('group relative flex-row gap-x-2', className)} {...props}>
 				<div className={cn('flex size-5 items-center justify-center')}>{item.icon && <item.icon />}</div>
 				<div className={cn('flex h-5 flex-col justify-center')}>
 					<p className="text-sm">{item.title}</p>
@@ -89,7 +89,7 @@ export function NavLargeItem({
 		<NavigationMenuLink className="p-0" asChild>
 			<Link
 				className={cn(
-					'bg-background group relative flex flex-col justify-center rounded-xl border border-dashed',
+					'bg-background group relative flex flex-col justify-center border border-dashed',
 					className,
 				)}
 				{...props}
@@ -117,7 +117,7 @@ export function NavGridCard({
 		<NavigationMenuPrimitive.Link asChild>
 			<Link
 				className={cn(
-					'group bg-background relative isolate z-0 flex h-full flex-col justify-between overflow-hidden rounded-xl border border-dashed px-5 py-4 transition-colors duration-75',
+					'group bg-background relative isolate z-0 flex h-full flex-col justify-between overflow-hidden rounded-sm  border border-dashed px-5 py-4 transition-colors duration-75',
 					className,
 				)}
 				{...props}

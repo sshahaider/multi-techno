@@ -2,7 +2,7 @@ import { APP_NAME } from '@/lib/constants';
 import { Cloud, Cpu, Lock, Zap } from 'lucide-react'; // Add the missing Cloud icon
 import Image from 'next/image';
 import { AnimatedContainer } from '../sheard/animated-container';
-import { SectionHeading } from '../sheard';
+import { SectionDescription, SectionHeading } from '../sheard';
 
 const features = [
 	{
@@ -29,16 +29,16 @@ const features = [
 
 export default function DashboardSection() {
 	return (
-		<section className="overflow-hidden border-y py-16 md:py-32">
+		<section className="overflow-hidden py-16 md:py-32">
 			<div className="container-sm space-y-8">
 				{/* Heading */}
 				<div className="relative z-10 max-w-xl">
 					<SectionHeading>
 						Built for Scaling Businesses
 					</SectionHeading>
-					<p className="text-foreground/80 mt-6 text-lg">
+					<SectionDescription>
 						Empower your business with the tools and speed you need to grow.
-					</p>
+					</SectionDescription>
 				</div>
 				{/* Dashboard Image */}
 				<div className="-mx-2 md:-mx-12 perspective-midrange lg:col-span-3">

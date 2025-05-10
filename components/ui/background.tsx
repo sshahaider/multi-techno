@@ -36,13 +36,8 @@ const BackGround = ({ variant, mask, size, className, ...props }: BackGroundProp
 BackGround.displayName = 'BackGround';
 
 const Grid = ({ pattern, size }: { pattern?: number[][]; size?: number }) => {
-	const p = pattern ?? [
-		[Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-		[Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-		[Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-		[Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-		[Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
-	];
+	const p = pattern ?? getRandomPattern();
+
 	return (
 		<div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
 			<div className="from-muted/30 to-muted/10 absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
@@ -79,15 +74,8 @@ function GridPattern({
 			<rect width="100%" height="100%" strokeWidth={0} fill={`url(#${patternId})`} />
 			{squares && (
 				<svg x={x} y={y} className="overflow-visible">
-					{squares.map(([x, y]) => (
-						<rect
-							strokeWidth="0"
-							key={`${x}-${y}`}
-							width={width + 1}
-							height={height + 1}
-							x={x * width}
-							y={y * height}
-						/>
+					{squares.map(([x, y], index) => (
+						<rect strokeWidth="0" key={index} width={width + 1} height={height + 1} x={x * width} y={y * height} />
 					))}
 				</svg>
 			)}
@@ -95,4 +83,12 @@ function GridPattern({
 	);
 }
 
-export { BackGround, Grid, GridPattern };
+function getRandomPattern(length?: number): number[][] {
+	length = length ?? 5;
+	return Array.from({ length }, () => [
+		Math.floor(Math.random() * 4) + 7, // random x between 7 and 10
+		Math.floor(Math.random() * 6) + 1, // random y between 1 and 6
+	]);
+}
+
+export { BackGround, Grid, GridPattern, getRandomPattern };

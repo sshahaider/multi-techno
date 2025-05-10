@@ -3,7 +3,7 @@ import { AnimatedContainer } from '../sheard/animated-container';
 import { ShopifyIcon, DropboxIcon, GoogleIcon, PayPalIcon, SlackIcon, StripeIcon } from '../icons';
 import { LogoIcon } from '../logo';
 import BookADemoButton from '../sheard/book-a-demo-button';
-import { SectionHeading } from '../sheard';
+import { SectionHeading, SectionDescription } from '../sheard';
 
 export default function IntegrationsSection() {
 	return (
@@ -41,14 +41,14 @@ export default function IntegrationsSection() {
 						</IntegrationCard>
 					</div>
 				</AnimatedContainer>
-				<AnimatedContainer className="mt-6 space-y-6 text-center sm:mt-0 sm:text-left">
-					<SectionHeading>
+				<AnimatedContainer className="mt-6 text-center sm:mt-0 sm:text-left">
+					<SectionHeading className='tracking-normal'>
 						Integrate with your favorite tools
 					</SectionHeading>
-					<p className="text-muted-foreground md:text-lg">
+					<SectionDescription>
 						Connect seamlessly with popular platforms and services to enhance your workflow.
-					</p>
-					<BookADemoButton size="lg" variant="ghost" showIcon />
+					</SectionDescription>
+					<BookADemoButton size="lg" variant="ghost" className='mt-5' showIcon />
 				</AnimatedContainer>
 			</div>
 		</section>

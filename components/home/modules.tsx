@@ -13,7 +13,7 @@ import {
 	BarChart2,
 	ClipboardList,
 } from 'lucide-react';
-import { SectionHeading } from '../sheard';
+import { SectionDescription, SectionHeading } from '../sheard';
 import { AnimatedContainer } from '../sheard/animated-container';
 import { Grid } from '../ui/background';
 
@@ -83,14 +83,14 @@ const modules = [
 
 export default function ModulesSection() {
 	return (
-		<section className="py-16 md:pt-32">
+		<section className="py-16 md:py-32">
 			<div className="container space-y-8">
 				<AnimatedContainer delay={0.1} className="text-center max-w-2xl mx-auto">
 					<SectionHeading>Modules for Growth</SectionHeading>
-					<p className="text-foreground/80 mt-6 text-sm md:text-lg text-balance">
+					<SectionDescription>
 						All essential modules you need to grow, manage, and streamline operations.
 Designed to boost efficiency, control, and business scalability.
-					</p>
+					</SectionDescription>
 				</AnimatedContainer>
 				<AnimatedContainer className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{modules.map((module) => (

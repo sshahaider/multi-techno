@@ -8,6 +8,8 @@ import ScroolTextSection from '@/components/home/scrool-text';
 import ClientsLogos from '@/components/home/clients-logos';
 import ModulesSection from '@/components/home/modules';
 import TestimonialsSection from '@/components/home/testimonials';
+import EInvoicingSection from '@/components/home/e-invoicing';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
 	return (
@@ -15,12 +17,21 @@ export default function Home() {
 			<HeroSection />
 			<ClientsLogos />
 			<OverviewSection />
+			<Separator />
 			<DashboardSection />
+			<Separator />
 			<ModulesSection />
+			<Separator />
+			<EInvoicingSection />
+			<Separator />
 			<IntegrationsSection />
+			<Separator />
 			<RegistrationSection />
+			<Separator />
 			<TestimonialsSection />
+			<Separator />
 			<ScroolTextSection />
+			<Separator />
 			<CallToAction />
 		</div>
 	);
