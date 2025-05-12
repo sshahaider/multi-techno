@@ -9,33 +9,33 @@ export const APP_EMAIL_FROM = `${APP_NAME} <${APP_EMAIL}>`;
 
 export const clients = [
 	{
-		logo: '/clients/gala.png',
+		logo: '/clients/gala.webp',
 	},
 	{
-		logo: '/clients/meta.png',
+		logo: '/clients/meta.webp',
 	},
 	{
-		logo: '/clients/mf.png',
+		logo: '/clients/mf.webp',
 	},
 	{
-		logo: '/clients/eventcon.png',
+		logo: '/clients/eventcon.webp',
 	},
 	{
-		logo: '/clients/imec.png',
+		logo: '/clients/imec.webp',
 	},
 	{
-		logo: '/clients/home.png',
+		logo: '/clients/home.webp',
 	},
 	{
-		logo: '/clients/satson.png',
+		logo: '/clients/satson.webp',
 	},
 	{
-		logo: '/clients/tribal-batteries.png',
+		logo: '/clients/tribal-batteries.webp',
 	},
 	{
-		logo: '/clients/abs.png',
+		logo: '/clients/abs.webp',
 	},
 	{
-		logo: '/clients/mazdoor.png',
+		logo: '/clients/mazdoor.webp',
 	},
 ];

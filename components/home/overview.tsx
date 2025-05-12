@@ -7,7 +7,7 @@ export default function OverviewSection() {
 		<section>
 			<AnimatedContainer className='py-24'>
 				<TextReveal
-					textClassName="tracking-wide gap-y-12 py-10 md:py-20 text-start font-normal text-lg md:text-2xl lg:text-4xl justify-start items-start max-w-5xl"
+					textClassName="tracking-wide gap-y-12 py-10 md:py-20 text-start font-normal text-lg md:text-2xl lg:text-4xl  xl:text-[42px] xl:tracking-wider xl:font-semibold justify-start items-start max-w-5xl"
 					texts={[
 						"Hi, We're Multi-Techno!",
 						"All-in-One ERP that's easy and ready to go",

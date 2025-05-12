@@ -14,7 +14,7 @@ function ClientSlider({ reverse = false, list }: { reverse?: boolean; list: type
 					<div className="flex" key={client.logo}>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img
-							className="mx-auto h-8 w-fit brightness-0 dark:invert filter"
+							className="mx-auto h-7 w-fit brightness-0 dark:invert filter"
 							src={client.logo}
 							alt={
 								// client.name ||
