@@ -4,7 +4,7 @@ import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import { NavItemType } from './navigation-menu-links';
 import { cn } from '@/lib/utils';
 import { ArrowRightIcon } from 'lucide-react';
-import { BackGround } from '../ui/background';
+import { GridPattern, getRandomPattern } from '../ui/background';
 import React from 'react';
 
 export function NavItem({
@@ -44,7 +44,7 @@ export function NavItemMobile({
 			)}
 			{...props}
 		>
-			<div className={cn('bg-muted/20 flex size-10 items-center justify-center  border border-dashed')}>
+			<div className={cn('bg-muted/20 flex size-10 items-center justify-center border border-dashed')}>
 				{item.icon && <item.icon />}
 			</div>
 			<div className={cn('flex h-10 flex-col justify-center')}>
@@ -88,10 +88,7 @@ export function NavLargeItem({
 	return (
 		<NavigationMenuLink className="p-0" asChild>
 			<Link
-				className={cn(
-					'bg-background group relative flex flex-col justify-center border border-dashed',
-					className,
-				)}
+				className={cn('bg-background group relative flex flex-col justify-center border border-dashed', className)}
 				{...props}
 			>
 				<div className="flex items-center justify-between px-5 py-4">
@@ -117,14 +114,21 @@ export function NavGridCard({
 		<NavigationMenuPrimitive.Link asChild>
 			<Link
 				className={cn(
-					'group bg-background relative isolate z-0 flex h-full flex-col justify-between overflow-hidden rounded-sm  border border-dashed px-5 py-4 transition-colors duration-75',
+					'group bg-background relative isolate z-0 flex h-full flex-col justify-between overflow-hidden rounded-sm border border-dashed px-5 py-4 transition-colors duration-75',
 					className,
 				)}
 				{...props}
 			>
 				<div className="absolute inset-0">
 					<div className="absolute -inset-[25%] -skew-y-12 [mask-image:linear-gradient(225deg,black,transparent)]">
-						<BackGround className="translate-y-2 transition-transform duration-150 ease-out group-hover:translate-y-0" />
+						<GridPattern
+							width={30}
+							height={30}
+							x="0"
+							y="0"
+							squares={getRandomPattern(5)}
+							className="fill-border/50 stroke-border absolute inset-0 size-full translate-y-2 transition-transform duration-150 ease-out group-hover:translate-y-0"
+						/>
 					</div>
 					<div
 						className={cn(

@@ -49,7 +49,7 @@ export default function DashboardSection() {
 							alt={`${APP_NAME} Dashboard`}
 							width={1906}
 							height={947}
-							className="rounded-md md:rounded-xl contrast-110 grayscale-50 border-3 border-foreground/20"
+							className="rounded-md invert dark:invert-0 md:rounded-xl contrast-110 grayscale-50 border-3 border-foreground/20"
 						/>
 					</div>
 				</div>

@@ -45,7 +45,7 @@ export default function TestimonialsSection() {
 											</span>
 										</div>
 										<blockquote className="mt-3">
-											<p className="text-foreground/80 text-sm font-thin tracking-wide">{quote}</p>
+											<p className="text-foreground/80 text-sm font-light tracking-wide">{quote}</p>
 										</blockquote>
 									</div>
 								</AnimatedContainer>

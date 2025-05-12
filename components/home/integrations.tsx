@@ -7,7 +7,7 @@ import { SectionHeading, SectionDescription } from '../sheard';
 
 export default function IntegrationsSection() {
 	return (
-		<section className="py-32 md:py-48 flex items-center">
+		<section className="py-32 md:py-48 flex items-center ">
 			<div className="container-sm grid items-center md:grid-cols-[.70fr_1fr] gap-12 md:gap-24">
 				<AnimatedContainer className="bg-muted/50 relative w-fit mx-auto">
 					<div className="to-background absolute inset-0 z-10 bg-radial from-transparent to-75%" />
@@ -23,7 +23,7 @@ export default function IntegrationsSection() {
 						<IntegrationCard>
 							<StripeIcon />
 						</IntegrationCard>
-						<IntegrationCard borderClassName="border-white/25" iconClassName="*:size-12" className="bg-muted/50">
+						<IntegrationCard borderClassName="border-foreground/25" iconClassName="*:size-12" className="bg-muted/50">
 							<LogoIcon />
 						</IntegrationCard>
 						<IntegrationCard>

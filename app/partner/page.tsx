@@ -2,7 +2,7 @@ import BecomeAPartnerForm from '@/components/forms/become-a-partner-form';
 import { Card } from '@/components/ui/card';
 import React from 'react';
 import OurPartners from './_components/our-partners';
-import { BackGround } from '@/components/ui/background';
+import { getRandomPattern, GridPattern } from '@/components/ui/background';
 import { constructMetadata } from '@/lib/utils/construct-metadata';
 
 export const metadata = constructMetadata({
@@ -11,14 +11,24 @@ export const metadata = constructMetadata({
 });
 
 export default function PartnerPage() {
+	const p = getRandomPattern(10);
+
 	return (
 		<div>
-			<section className="relative min-h-screen py-24 md:py- -mt-14">
-				<BackGround mask="toTop" variant="dot" />
-				<div className="container grid gap-12 md:grid-cols-[1fr_.70fr] md:gap-24">
-					<div className="flex flex-col justify-center ">
-						<div className="relative z-10 space-y-5 max-w-xl">
-							<h1 className="font-heading text-5xl font-bold md:text-5xl lg:text-6xl xl:text-7xl lg:font-extrabold">
+			<section className="md:py- relative -mt-14 min-h-screen py-24">
+				<div className="to-background absolute inset-0 z-1 bg-radial-[at_80%_20%] from-transparent to-85%" />
+				<GridPattern
+					width={50}
+					height={50}
+					x="0"
+					y="0"
+					squares={p}
+					className="fill-muted/50 stroke-foreground/10 absolute inset-0 h-full w-full"
+				/>
+				<div className="z-10 container grid gap-12 md:grid-cols-[1fr_.70fr] md:gap-24">
+					<div className="flex flex-col justify-center">
+						<div className="relative z-10 max-w-xl space-y-5">
+							<h1 className="font-heading text-5xl font-bold md:text-5xl lg:text-6xl lg:font-extrabold xl:text-7xl">
 								Become a Partner With Us
 							</h1>
 							<p className="text-foreground/80 text-lg">
@@ -27,7 +37,7 @@ export default function PartnerPage() {
 							</p>
 						</div>
 					</div>
-					<Card className="rounded-md">
+					<Card className="rounded-md z-10">
 						<BecomeAPartnerForm />
 					</Card>
 				</div>

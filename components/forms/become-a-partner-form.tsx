@@ -35,7 +35,7 @@ export default function BecomeAPartnerForm() {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
-                <div className="space-y-5 p-5 bg-input/20">
+                <div className="space-y-5 p-5 dark:bg-input/20">
                     <FormField
                         control={form.control}
                         name="name"

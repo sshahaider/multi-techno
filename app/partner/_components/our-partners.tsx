@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 export default function OurPartners() {
+	
 	const partners = [
 		{
 			name: 'LinksZen IT',
@@ -43,7 +44,7 @@ export default function OurPartners() {
                                 <img
 								src={partner.logo}
 								alt={`${partner.name} Logo`}
-								className="h-16 object-contain brightness-0 invert filter"
+								className="h-16 object-contain brightness-0 dark:invert filter"
 							/>
                             </div>
 							<div className="flex flex-wrap gap-2 p-6 h-32">

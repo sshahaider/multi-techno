@@ -49,7 +49,7 @@ export default function RegistrationSection() {
 				x="0"
 				y="0"
 				squares={p}
-				className="fill-muted/10 stroke-muted/25 absolute inset-0 h-full w-full"
+				className="fill-border/30 stroke-border/60 absolute inset-0 h-full w-full"
 			/>
 			<div className="relative z-10 container-sm flex flex-col px-6 md:grid md:grid-cols-[1fr_.75fr] md:gap-6">
 				<div className="order-last mt-6 flex flex-col justify-center gap-12 md:order-first">

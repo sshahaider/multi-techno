@@ -106,7 +106,7 @@ export function Navigation() {
 			<div className="absolute top-full left-1/2 z-50 mt-2 -translate-x-1/2">
 				<NavigationMenuPrimitive.Viewport
 					data-slot="navigation-menu-viewport"
-					className="origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 shadow-background relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-xl border border-dashed shadow-sm transition-[width,height] md:w-[var(--radix-navigation-menu-viewport-width)]"
+					className="origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:shadow-background relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-sm border border-dashed shadow-sm transition-[width,height] md:w-[var(--radix-navigation-menu-viewport-width)]"
 				/>
 			</div>
 		</NavigationMenuPrimitive.Root>

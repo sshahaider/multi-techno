@@ -1,53 +1,19 @@
 import React, { useId } from 'react';
-import { cn } from '@/lib/utils';
-import { cva, VariantProps } from 'class-variance-authority';
 
-const backGroundVariants = cva('z--10 absolute inset-0 h-full w-full', {
-	variants: {
-		variant: {
-			grid: 'bg-[linear-gradient(to_right,color-mix(in_oklab,var(--foreground)10%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_oklab,var(--foreground)10%,transparent)_1px,transparent_1px)]',
-			dot: 'bg-[radial-gradient(color-mix(in_oklab,var(--foreground)30%,transparent)_1px,transparent_1px)]',
-		},
-		mask: {
-			rounded: '[mask-image:radial-gradient(ellipse_at_center,var(--background)_30%,transparent)]',
-			toTop: '[mask-image:linear-gradient(to_bottom,var(--background),transparent)]',
-			toBottom: '[mask-image:linear-gradient(to_bottom,transparent,var(--background))]',
-			topBottom: '[mask-image:linear-gradient(to_bottom,transparent,var(--background),transparent)]',
-			none: '',
-		},
-		size: {
-			sm: 'bg-[size:24px_24px]',
-			md: 'bg-[size:28px_28px]',
-			lg: 'bg-[size:32px_32px]',
-		},
-	},
-	defaultVariants: {
-		variant: 'grid',
-		mask: 'none',
-		size: 'sm',
-	},
-});
-
-type BackGroundProps = React.ComponentProps<'div'> & VariantProps<typeof backGroundVariants>;
-
-const BackGround = ({ variant, mask, size, className, ...props }: BackGroundProps) => {
-	return <div className={cn(backGroundVariants({ variant, mask, size, className }))} {...props} />;
-};
-BackGround.displayName = 'BackGround';
 
 const Grid = ({ pattern, size }: { pattern?: number[][]; size?: number }) => {
 	const p = pattern ?? getRandomPattern();
 
 	return (
 		<div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
-			<div className="from-muted/30 to-muted/10 absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
+			<div className="from-border/30 to-border/10 absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] opacity-100">
 				<GridPattern
 					width={size ?? 20}
 					height={size ?? 20}
 					x="-12"
 					y="4"
 					squares={p}
-					className="fill-muted/50 stroke-muted absolute inset-0 h-full w-full mix-blend-overlay"
+					className="fill-border/50 stroke-border absolute inset-0 h-full w-full mix-blend-overlay"
 				/>
 			</div>
 		</div>
@@ -91,4 +57,4 @@ function getRandomPattern(length?: number): number[][] {
 	]);
 }
 
-export { BackGround, Grid, GridPattern, getRandomPattern };
+export { Grid, GridPattern, getRandomPattern };

@@ -58,10 +58,10 @@ function ElegantShape({
 						'absolute inset-0 rounded-full',
 						'bg-gradient-to-r to-transparent',
 						gradient,
-						'border-2 border-white/[0.15] backdrop-blur-[2px]',
-						'shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]',
+						'border-2 border-foreground/15 backdrop-blur-xs',
+						'shadow-[0_8px_32px_0_--theme(--color-foreground/.1)]',
 						'after:absolute after:inset-0 after:rounded-full',
-						'after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]',
+						'after:bg-[radial-gradient(circle_at_50%_50%,--theme(--color-foreground/.2),transparent_70%)]',
 					)}
 				/>
 			</motion.div>
@@ -77,7 +77,7 @@ export function ElegantShapes() {
 					width={600}
 					height={140}
 					rotate={12}
-					gradient="from-indigo-500/[0.15]"
+					gradient="from-indigo-500/50 dark:from-indigo-500/15"
 					className="top-[15%] left-[-10%] md:top-[20%] md:left-[-5%]"
 				/>
 
@@ -86,7 +86,7 @@ export function ElegantShapes() {
 					width={500}
 					height={120}
 					rotate={-15}
-					gradient="from-rose-500/[0.15]"
+					gradient="from-rose-500/50 dark:from-rose-500/15"
 					className="top-[70%] right-[-5%] md:top-[75%] md:right-[0%]"
 				/>
 
@@ -95,7 +95,7 @@ export function ElegantShapes() {
 					width={300}
 					height={80}
 					rotate={-8}
-					gradient="from-violet-500/[0.15]"
+					gradient="from-violet-500/50 dark:from-violet-500/15"
 					className="bottom-[5%] left-[5%] md:bottom-[10%] md:left-[10%]"
 				/>
 
@@ -104,7 +104,7 @@ export function ElegantShapes() {
 					width={200}
 					height={60}
 					rotate={20}
-					gradient="from-amber-500/[0.15]"
+					gradient="from-amber-500/50 dark:from-amber-500/15"
 					className="top-[10%] right-[15%] md:top-[15%] md:right-[20%]"
 				/>
 
@@ -113,7 +113,7 @@ export function ElegantShapes() {
 					width={150}
 					height={40}
 					rotate={-25}
-					gradient="from-cyan-500/[0.15]"
+					gradient="from-cyan-500/50 dark:from-cyan-500/15"
 					className="top-[5%] left-[20%] md:top-[10%] md:left-[25%]"
 				/>
 			</div>

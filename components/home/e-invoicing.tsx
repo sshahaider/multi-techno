@@ -23,7 +23,7 @@ export default function EInvoicingSection() {
 				x="0"
 				y="0"
 				squares={p}
-				className="fill-muted/20 stroke-muted/40 absolute inset-0 h-full w-full"
+				className="fill-border/30 stroke-border/60 absolute inset-0 h-full w-full"
 			/>
 
 			<div className="container-sm relative z-10 space-y-12">
@@ -46,7 +46,7 @@ export default function EInvoicingSection() {
 								ref={fbrRef}
 							>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/fbr.png" alt="FBR Logo" className="-mt-1 -ml-0.5 h-7 invert lg:h-8" />
+								<img src="/fbr.png" alt="FBR Logo" className="-mt-1 -ml-0.5 h-7 dark:invert lg:h-8" />
 							</div>
 							<div
 								className="bg-popover z-10 flex size-16 items-center justify-center rounded-md border-2 md:size-18 lg:size-20 xl:size-24"
@@ -59,7 +59,7 @@ export default function EInvoicingSection() {
 								ref={zatcaRef}
 							>
 								{/* eslint-disable-next-line @next/next/no-img-element */}
-								<img src="/zatca.png" alt="ZATCA Logo" className="h-9 invert lg:h-10" />
+								<img src="/zatca.png" alt="ZATCA Logo" className="h-9 dark:invert lg:h-10" />
 							</div>
 						</div>
 						<AnimatedBeam duration={3} containerRef={containerRef} reverse fromRef={fbrRef} toRef={logoRef} />

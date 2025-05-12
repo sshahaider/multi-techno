@@ -9,7 +9,7 @@ export default function BackgroundOverlay() {
 		<div
 			data-state={isOpen ? 'open' : 'closed'}
 			data-slot="navigation-menu-overlay"
-			className="pointer-events-none fixed inset-0 z-40 bg-black/80 opacity-0 backdrop-blur-sm transition-opacity duration-300 ease-in-out data-[state=open]:opacity-100"
+			className="pointer-events-none fixed inset-0 z-40 bg-background/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 ease-in-out data-[state=open]:opacity-100"
 			aria-hidden="true"
 		/>
 	);

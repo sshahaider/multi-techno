@@ -5,6 +5,7 @@ import { constructMetadata } from '@/lib/utils/construct-metadata';
 import { cn } from '@/lib/utils';
 import { fontHeading, fontMono, fontSans } from '@/lib/fonts';
 import { Footer } from '@/components/footer';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = constructMetadata({
 	url: '/',
@@ -25,9 +26,11 @@ export default function RootLayout({
 					fontMono.variable,
 				)}
 			>
-				<Header />
-				<main className="relative flex min-h-svh flex-col">{children}</main>
-				<Footer />
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+					<Header />
+					<main className="relative flex min-h-svh flex-col">{children}</main>
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

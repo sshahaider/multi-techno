@@ -5,6 +5,7 @@ import MoileNav from './moile-nav';
 import BookADemoButton from '../sheard/book-a-demo-button';
 import { LogoWithText } from '../logo';
 import BackgroundOverlay from './background-overlay';
+import { ThemeToggle } from '../theme-toggle';
 
 export function Header() {
 	return (
@@ -17,10 +18,11 @@ export function Header() {
 					<div className="hidden w-full lg:flex lg:justify-center">
 						<Navigation />
 					</div>
-					<div className="hidden w-full lg:flex lg:items-center lg:justify-end lg:gap-2">
-						<BookADemoButton className="rounded-full" />
+					<div className='flex w-full items-center justify-end gap-2 lg:gap-4'>
+						<ThemeToggle />
+						<BookADemoButton className="hidden rounded-full lg:block" />
+						<MoileNav />
 					</div>
-					<MoileNav />
 				</nav>
 			</Headerwraper>
 			<BackgroundOverlay />
