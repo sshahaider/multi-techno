@@ -1,8 +1,8 @@
-"use client";
+'use client';
 import React from 'react';
 import { InputWithIcon } from '../ui/input';
 import { Button } from '../ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
 import { Textarea } from '../ui/textarea';
 import { useForm } from 'react-hook-form';
 import { BookADemoSchema, BookADemoTypes } from '@/lib/zod-schemas';
@@ -11,6 +11,8 @@ import { AtSignIcon, PhoneIcon, User2Icon } from 'lucide-react';
 import { Checkbox } from '../ui/checkbox';
 
 export default function DemoForm() {
+	const startTimeRef = React.useRef(Date.now());
+
 	const form = useForm<BookADemoTypes>({
 		resolver: zodResolver(BookADemoSchema),
 		defaultValues: {
@@ -24,12 +26,25 @@ export default function DemoForm() {
 
 	const isLoading = form.formState.isSubmitting;
 
-	const onSubmit = async (data: BookADemoTypes) => {
+	const onSubmit = async (data: BookADemoTypes, e?: React.BaseSyntheticEvent) => {
 		try {
-			// TODO: Handle form submission
-			console.log(data);
+			const honeypot = e?.target?.company?.value;
+			if (honeypot) {
+				form.setError('root', { message: 'Bot detected (honeypot triggered)' });
+				return;
+			}
+
+			const elapsed = Date.now() - startTimeRef.current;
+			if (elapsed < 5000) {
+				form.setError('root', { message: 'Bot detected (submitted too quickly)' });
+				return;
+			}
+
+			// TODO: Handle real submission
+			console.log('Form submitted:', data);
 		} catch (error) {
 			console.error(error);
+			form.setError('root', { message: 'Something went wrong. Please try again.' });
 		}
 	};
 
@@ -37,10 +52,13 @@ export default function DemoForm() {
 		<Form {...form}>
 			<div className="bg-input/20 border-b border-dashed p-4">
 				<h2 className="font-heading text-xl font-semibold md:text-2xl">Book a Demo</h2>
-				<p className="text-muted-foreground text-sm">Fill out the form below and we’ll be in touch shortly.</p>
+				<p className="text-muted-foreground text-sm">Fill out the form below and we&apos;ll be in touch shortly.</p>
 			</div>
 
 			<form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+				{/* Honeypot field */}
+				<input type="text" name="company" autoComplete="off" style={{ display: 'none' }} tabIndex={-1} />
+
 				<div className="space-y-4 p-4">
 					<FormField
 						control={form.control}
@@ -121,11 +139,7 @@ export default function DemoForm() {
 						render={({ field }) => (
 							<FormItem className="flex items-center">
 								<FormControl>
-									<Checkbox
-										checked={field.value}
-										onCheckedChange={field.onChange}
-										disabled={isLoading}
-									/>
+									<Checkbox checked={field.value} onCheckedChange={field.onChange} disabled={isLoading} />
 								</FormControl>
 								<FormLabel>Send me promotions, updates, and news.</FormLabel>
 								<FormMessage />
@@ -133,6 +147,10 @@ export default function DemoForm() {
 						)}
 					/>
 				</div>
+
+				<FormDescription className="text-destructive py-2 text-center">
+					{form.formState.errors.root?.message}
+				</FormDescription>
 
 				<div className="bg-input/20 border-t border-dashed p-3">
 					<Button type="submit" disabled={isLoading} className="w-full">
